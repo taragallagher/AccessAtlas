@@ -11,6 +11,26 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='
 L.geoJson(statesData,{weight: 1}).addTo(map_score2);
 map_score2.scrollWheelZoom.disable();
 
+// Set zoom depending on screen size
+width = document.documentElement.clientWidth;
+if (width < 768) {
+    // set the zoom level to 10
+    map_score2.setZoom(3);
+}  else {
+    map_score2.setZoom(3.5);
+}
+// Listen for screen resize events
+window.addEventListener('resize', function(event){
+    var width = document.documentElement.clientWidth;
+    // Phones are <768 pixels wide
+    if (width < 768) {
+        // set the zoom level to 10
+        map_score2.setZoom(3);
+    }  else {
+        map_score2.setZoom(3.5);
+    }
+});
+
 function getColor2(d) {
     return d == "Inaccessible or banned" ? '#bd0026' :
         d == "Surgical abortion banned or extreme restrictions"  ? '#fc6d33' :

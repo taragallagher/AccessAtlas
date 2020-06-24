@@ -11,6 +11,26 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='
 L.geoJson(statesData,{weight: 1}).addTo(map_composite);
 map_composite.scrollWheelZoom.disable();
 
+// Set zoom depending on screen size
+width = document.documentElement.clientWidth;
+if (width < 768) {
+    // set the zoom level to 10
+    map_composite.setZoom(2.5);
+}  else {
+    map_composite.setZoom(4);
+}
+// Listen for screen resize events
+window.addEventListener('resize', function(event){
+    var width = document.documentElement.clientWidth;
+    // Phones are <768 pixels wide
+    if (width < 768) {
+        // set the zoom level to 10
+        map_composite.setZoom(2.5);
+    }  else {
+        map_composite.setZoom(4);
+    }
+});
+
 function getColor_comp(d) {
     return d > 8  ? '#bd0026' :
         d > 7  ? '#e31a1c' :
