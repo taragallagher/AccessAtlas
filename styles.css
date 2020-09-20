@@ -114,7 +114,7 @@ a:hover {
 .info h4 {
     font-size: 18px;
     margin: 0 0 5px;
-    color: #777;
+    color: black;
 }
 
 .subinfo {
@@ -130,13 +130,14 @@ a:hover {
 .subinfo h4 {
   font-size: 20px;
   margin: 0 0 5px;
-  color: #777;
+  color: black;
 }
 
 .legend {
     width: 18vh;
     line-height: 18px;
-    color: #555;
+    /* color: #555; */
+    color: black;
     text-align: center;
 }
 

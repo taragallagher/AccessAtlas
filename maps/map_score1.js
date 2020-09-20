@@ -1,12 +1,14 @@
 var map_score1 = L.map('map_score1id', {zoomSnap: .1}).setView([37.8, -96], 3.5);
 var geojson1;
-
-mapboxAccessToken = 'pk.eyJ1IjoidGFyYWdhbGxhZ2hlciIsImEiOiJjazluYmdnMDEwMGl3M21sN2lzMTJ4OGVjIn0.IW23HKS-_piwIDi2w7m13w';
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + mapboxAccessToken, {
-    id: 'mapbox.outdoors',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    // attribution: ...
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+tileSize: 512,
+maxZoom: 18,
+zoomOffset: -1,
+id: 'mapbox/dark-v10',
+accessToken: 'pk.eyJ1IjoidGFyYWdhbGxhZ2hlciIsImEiOiJjazk4eGYxbG4xYWtzM21sY2EzazR1d2N2In0.KHOsDxKbJU6-Tk7PeRCJUQ'
 }).addTo(map_score1);
+
 
 // Set zoom depending on screen size
 width = document.documentElement.clientWidth;

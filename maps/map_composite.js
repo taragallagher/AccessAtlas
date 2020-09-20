@@ -1,11 +1,12 @@
 var map_composite = L.map('map_composite_id').setView([37.8, -96], 4);
 var geojson_comp;
-
-mapboxAccessToken = 'pk.eyJ1IjoidGFyYWdhbGxhZ2hlciIsImEiOiJjazk4eGYxbG4xYWtzM21sY2EzazR1d2N2In0.KHOsDxKbJU6-Tk7PeRCJUQ';
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + mapboxAccessToken, {
-    id: 'mapbox.outdoors',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    // attribution: ...
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+tileSize: 512,
+maxZoom: 18,
+zoomOffset: -1,
+id: 'mapbox/dark-v10',
+accessToken: 'pk.eyJ1IjoidGFyYWdhbGxhZ2hlciIsImEiOiJjazk4eGYxbG4xYWtzM21sY2EzazR1d2N2In0.KHOsDxKbJU6-Tk7PeRCJUQ'
 }).addTo(map_composite);
 
 L.geoJson(statesData,{weight: 1}).addTo(map_composite);
