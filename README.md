@@ -1,6 +1,6 @@
 # About
 
-Source code for  https://taragallagher.github.io/AccessAtlas/ (formerly, https://access-atlas.org, but our domain ownership has expired).
+Source code for  https://taragallagher.github.io/AccessAtlas/ (formerly https://access-atlas.org, but our domain ownership has expired).
 
 # Project
 
